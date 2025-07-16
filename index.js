@@ -10,12 +10,12 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
-// app.use(cors());
+app.use(cors());
 
-app.use(cors({
-  origin: ['http://localhost:3000', 'umodzi-edu.netlify.app'],
-  credentials: true
-}));
+// app.use(cors({
+//   origin: ['http://localhost:3000', 'umodzi-edu.netlify.app'],
+//   credentials: true
+// }));
 
 app.use(express.json());
 
@@ -26,7 +26,9 @@ const MOMO_CONFIG = {
   COLLECTION_USER_ID: process.env.MOMO_COLLECTION_USER_ID,
   COLLECTION_API_KEY: process.env.MOMO_COLLECTION_API_KEY,
   COLLECTION_SUBSCRIPTION_KEY: process.env.MOMO_COLLECTION_SUBSCRIPTION_KEY,
-  CALLBACK_URL: process.env.CALLBACK_URL || 'https://your-app.vercel.app/callback'
+//   CALLBACK_URL: process.env.CALLBACK_URL || 'https://your-app.vercel.app/callback',
+CALLBACK_URL: "string"
+
 };
 
 // Helper function to get access token
