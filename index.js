@@ -21,7 +21,7 @@ app.use(express.json());
 
 // MTN MoMo API Configuration
 const MOMO_CONFIG = {
-  BASE_URL: process.env.MOMO_BASE_URL || 'https://sandbox.momodeveloper.mtn.com',
+  BASE_URL: process.env.MOMO_BASE_URL || 'https://momodeveloper.mtn.com',
   COLLECTION_PRIMARY_KEY: process.env.MOMO_COLLECTION_PRIMARY_KEY,
   COLLECTION_USER_ID: process.env.MOMO_COLLECTION_USER_ID,
   COLLECTION_API_KEY: process.env.MOMO_COLLECTION_API_KEY,
