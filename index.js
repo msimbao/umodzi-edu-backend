@@ -21,7 +21,8 @@ app.use(express.json());
 
 // MTN MoMo API Configuration
 const MOMO_CONFIG = {
-  BASE_URL: process.env.MOMO_BASE_URL || 'https://momodeveloper.mtn.com',
+  // BASE_URL: process.env.MOMO_BASE_URL || 'https://sandbox.momodeveloper.mtn.com',
+  BASE_URL: 'https://sandbox.momodeveloper.mtn.com',
   COLLECTION_PRIMARY_KEY: process.env.MOMO_COLLECTION_PRIMARY_KEY,
   COLLECTION_USER_ID: process.env.MOMO_COLLECTION_USER_ID,
   COLLECTION_API_KEY: process.env.MOMO_COLLECTION_API_KEY,
@@ -100,7 +101,7 @@ app.post('/api/request-payment', async (req, res) => {
         headers: {
           'Authorization': `Bearer ${accessToken}`,
           'X-Reference-Id': referenceId,
-          'X-Target-Environment': 'production',
+          'X-Target-Environment': 'sandbox',
           'Ocp-Apim-Subscription-Key': MOMO_CONFIG.COLLECTION_SUBSCRIPTION_KEY,
           'Content-Type': 'application/json'
         }
@@ -136,7 +137,7 @@ app.get('/api/payment-status/:referenceId', async (req, res) => {
       {
         headers: {
           'Authorization': `Bearer ${accessToken}`,
-          'X-Target-Environment': 'production',
+          'X-Target-Environment': 'sandbox',
           'Ocp-Apim-Subscription-Key': MOMO_CONFIG.COLLECTION_SUBSCRIPTION_KEY
         }
       }
@@ -169,7 +170,7 @@ app.get('/api/account-balance', async (req, res) => {
       {
         headers: {
           'Authorization': `Bearer ${accessToken}`,
-          'X-Target-Environment': 'production',
+          'X-Target-Environment': 'sandbox',
           'Ocp-Apim-Subscription-Key': MOMO_CONFIG.COLLECTION_SUBSCRIPTION_KEY
         }
       }
