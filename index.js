@@ -100,7 +100,7 @@ app.post('/api/request-payment', async (req, res) => {
         headers: {
           'Authorization': `Bearer ${accessToken}`,
           'X-Reference-Id': referenceId,
-          'X-Target-Environment': 'sandbox',
+          'X-Target-Environment': 'production',
           'Ocp-Apim-Subscription-Key': MOMO_CONFIG.COLLECTION_SUBSCRIPTION_KEY,
           'Content-Type': 'application/json'
         }
@@ -136,7 +136,7 @@ app.get('/api/payment-status/:referenceId', async (req, res) => {
       {
         headers: {
           'Authorization': `Bearer ${accessToken}`,
-          'X-Target-Environment': 'sandbox',
+          'X-Target-Environment': 'production',
           'Ocp-Apim-Subscription-Key': MOMO_CONFIG.COLLECTION_SUBSCRIPTION_KEY
         }
       }
@@ -169,7 +169,7 @@ app.get('/api/account-balance', async (req, res) => {
       {
         headers: {
           'Authorization': `Bearer ${accessToken}`,
-          'X-Target-Environment': 'sandbox',
+          'X-Target-Environment': 'production',
           'Ocp-Apim-Subscription-Key': MOMO_CONFIG.COLLECTION_SUBSCRIPTION_KEY
         }
       }
